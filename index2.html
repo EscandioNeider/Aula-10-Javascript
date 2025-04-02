@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WHILE (2)</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Exercício 1</a>
+      <a href="index2.html">Exercício 2</a>
+    </nav>
+  </header>
+
+  <h2>Digite o usuário</h2>
+
+  <!-- Formulário de entrada -->
+  <form id="formulario">
+    <label for="usuario">Usuário:</label>
+    <input type="text" id="usuario" name="usuario" required>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    // Função para validar o usuário
+    document.getElementById("formulario").addEventListener("submit", function(event){
+      event.preventDefault(); // Evita o comportamento padrão do formulário
+
+      var usuario = document.getElementById("usuario").value;
+
+      if(usuario == "SESI" || usuario == "ESCOLA"){
+        alert("Bem-vindo!");
+      } else {
+        alert("Acesso negado, saia daqui!");
+      }
+
+      // Limpa o campo de entrada
+      document.getElementById("usuario").value = "";
+    });
+  </script>
+</body>
+</html>
